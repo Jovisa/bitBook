@@ -18,7 +18,7 @@ class DataService {
 
     getSingleUserData(datahandler, userId, errorHandler) {
         this.communication.getRequest(`users/${userId}`, (response) => {
-            const profile = new Profile(response.data);
+            // const profile = new Profile(response.data);
             datahandler(response);
         }, (error) => {
             if (!errorHandler) {
@@ -52,7 +52,7 @@ class DataService {
         this.communication.putRequest("Profiles", newData, (response) => {
             if (response.status >= 200 && response.status < 400) {
                 window.location.reload();
-            };
+            }
         }, (error) => {
             if (!errorHandler) {
                 console.log("Handler not provided");

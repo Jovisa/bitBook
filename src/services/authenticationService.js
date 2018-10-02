@@ -22,13 +22,14 @@ class AuthenticationService {
         this.commService.postRequest("login", userData, (data) => {
             this.storeSession(data.data.sessionId);
             this.redirect.redirect("feed");
-        }, (error) =>{
+        }, (response) =>{
+            let error = response.data.error.message;
             handleError(error);
         });
     }
 
     register(userData, handleError) {
-        this.commService.postRequest("register", userData, (data) => {
+        this.commService.postRequest("register", userData, () => {
         }, (error) => {
             handleError(error);
         });

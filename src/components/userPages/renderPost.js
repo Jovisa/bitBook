@@ -45,6 +45,7 @@ class RenderPost extends Component {
     deletePost() {
         const postId = this.props.postId;
         this.dataService.deletePost(postId, (response) => {
+            console.log(`Delete post response: ${response}`);
             this.redirectionService.redirect("feed");
         }, (error) => {
             console.log(error);

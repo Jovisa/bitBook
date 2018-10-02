@@ -3,7 +3,6 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 import EntryPage from "./entryPage/entryPage";
 import Main from "./userPages/main";
-import UserProfile from "./userPages/profilePage";
 import AuthenticationService from "../services/authenticationService";
 
 class App extends React.Component {

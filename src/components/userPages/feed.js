@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Modal from "react-modal";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Pagination from "react-js-pagination";
+// import Pagination from "react-js-pagination";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import DataService from "../../services/dataService";
@@ -11,13 +11,13 @@ import CommunicationService from "../../services/communicationService";
 import TextPost from "../createPost/textPost";
 import ImagePost from "../createPost/imagePost";
 import VideoPost from "../createPost/videoPost";
-import SinglePostInfo from "../userPages/singlePostInfo";
+// import SinglePostInfo from "../userPages/singlePostInfo";
 import { POSTS_PER_PAGE } from "../../constants";
 import EnlargeImage from "../userPages/enlargeImage";
 
-const rowStyle = {
-    maxHeight: "200px"
-};
+// const rowStyle = {
+//     maxHeight: "200px"
+// };
 
 const videoStyle = {
     padding: "10px",
@@ -52,23 +52,23 @@ const modalCardStyle = {
     position: "relative"
 };
 
-const updateButtonStyle = {
-    transition: "width 0.5s",
-    transitionTimingFunction: "linear",
-};
+// const updateButtonStyle = {
+//     transition: "width 0.5s",
+//     transitionTimingFunction: "linear",
+// };
 
 const closeButtonStyle = {
     transition: "width 0.5s",
     transitionTimingFunction: "linear",
 };
 
-const dropdownStyle = {
-    width: "85%",
-    height: "95%",
-    padding: "20px",
-    margin: "10px 0 0 0",
-    textAlign: "center",
-};
+// const dropdownStyle = {
+//     width: "85%",
+//     height: "95%",
+//     padding: "20px",
+//     margin: "10px 0 0 0",
+//     textAlign: "center",
+// };
 
 const cardStyle = {
     textAlign: "center",

@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import AuthenticationService from "../../services/authenticationService";
-import Feed from "../userPages/feed";
+// import Feed from "../userPages/feed";
 
 const loginButton = {
     borderRadius: "5px",
@@ -86,17 +86,17 @@ class Login extends React.Component {
                 password: passInput
             };
 
-            this.authService.login(userData, (error) =>{
+            this.authService.login(userData, (error) => {
                 this.setState({
                     isThereRealError: true,
-                    error: errorMsg
+                    error: error
                 });
             });
 
-            this.setState({
-                emailInput: "",
-                passInput: ""
-            });
+            // this.setState({
+            //     emailInput: "",
+            //     passInput: ""
+            // });
         }
     }
 

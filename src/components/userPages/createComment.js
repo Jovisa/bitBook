@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
 
 import DataService from "../../services/dataService";
-import RedirectionService from "../../services/redirectionService";
+// import RedirectionService from "../../services/redirectionService";
 
 const commentStyle = {
     width: "90%",
@@ -19,7 +18,7 @@ class CreateComment extends Component {
 
 
         this.dataService = new DataService();
-        this.redirectionService = new RedirectionService();
+        // this.redirectionService = new RedirectionService();
 
         this.bindInit();
 
@@ -36,9 +35,10 @@ class CreateComment extends Component {
             postId: this.props.postId
         };
 
-        const currentUrl = this.props.currentUrl.slice(1);
+        // const currentUrl = this.props.currentUrl.slice(1);
 
         this.dataService.postComment(body, (response) => {
+            console.log(`Post comment response: ${response}`);
             this.setState({
                 comment: ""
             });

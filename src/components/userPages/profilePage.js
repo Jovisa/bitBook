@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
 
@@ -55,10 +54,10 @@ const updateButtonStyle = {
     transition: "width 0.5s",
     transitionTimingFunction: "linear"
 };
-
-const nameStyle = {
-    textAlign: "center",
-};
+//
+// const nameStyle = {
+//     textAlign: "center",
+// };
 
 class UserProfile extends Component {
     constructor(props) {
@@ -262,10 +261,6 @@ class UserProfile extends Component {
             <input type="button" value="Edit Profile " id="editProfileData" onClick={this.openModal} className="btn btn-info btn-lg loginProfileButton " style={loginStyle} />
         );
     }
-
-    // showUserPosts() {
-
-    // }
 
     render() {
         return (

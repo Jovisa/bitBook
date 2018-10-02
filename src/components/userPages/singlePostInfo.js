@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect } from "react-router-dom";
-
 import DataService from "../../services/dataService";
-import RedirectionService from "../../services/redirectionService";
 import CreateComment from "../userPages/createComment";
 import GetComments from "../userPages/getComments";
 import RenderPost from "../userPages/renderPost";
@@ -35,7 +32,7 @@ class SinglePostInfo extends Component {
         };
 
 
-        this.redirectService = new RedirectionService();
+        // this.redirectService = new RedirectionService();
         this.DataService = new DataService();
 
 
@@ -72,7 +69,7 @@ class SinglePostInfo extends Component {
             },
             (error) => {
                 this.setState({
-                    error: false,
+                    error: error,
                     isThereError: false
                 });
             }
