@@ -63,8 +63,8 @@ class RenderPost extends Component {
         const singlePost = this.props.singlePost;
         return (
             <div>
-                <h1 className="card-title profileName">{singlePost.userDisplayName}</h1>
-                <p>{singlePost.dateCreated}</p>
+                <div className="card-title profileName">{singlePost.userDisplayName}</div>
+                <p>{singlePost.dateCreated}</p>``
                 <p>{singlePost.text ? <p>{singlePost.text}</p> : singlePost.imageUrl ? <img src={singlePost.imageUrl} style={imgStyle} /> : singlePost.videoUrl ? this.processVideoUrl(singlePost.videoUrl) : "no content detected"}</p>
                 {this.renderDeleteButton()}
             </div>

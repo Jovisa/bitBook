@@ -26,9 +26,7 @@ const videoStyle = {
 };
 
 const imgStyle = {
-    borderRadius: "50px",
     width: "60%",
-    margin: "10px auto",
     padding: "10px",
     border: "1px solid rgba(178,215,251,0.2)",
     boxShadow: "-12px 11px 34px -1px rgba(44,62,80,0.34)"
@@ -68,12 +66,24 @@ const closeButtonStyle = {
 //     padding: "20px",
 //     margin: "10px 0 0 0",
 //     textAlign: "center",
-// };
+// }; 
+
+const userNameStyle = {
+    color: "rgba(65, 105, 144, 1)",
+    fontSize: "1.7em",
+
+};
+
+const dateStyle = {
+    color: "rgba(65, 105, 144, 1)",
+    fontSize: "1em",
+    textAlign: "right"
+};
 
 const cardStyle = {
-    textAlign: "center",
-    borderRadius: "2em",
-    backgroundColor: "rgba(116, 162, 208, 0.2)",
+    padding: "2em",
+    borderRadius: "1em",
+    backgroundColor: "rgba(255,255,255, 0.5)",
     boxShadow: "-12px 11px 34px -1px rgba(44,62,80,0.34)",
 };
 
@@ -227,12 +237,12 @@ class Feed extends Component {
                         <div key={post.id} className="col-12 col-xl-8 offset-xl-2" style={{ paddingBottom: "60px" }}>
                             <div style={cardStyle}>
                                 <Link to={`/profile/${post.userId}`} >
-                                    <h2>{post.userDisplayName}</h2>
+                                    <h2 style={userNameStyle}>{post.userDisplayName}</h2>
                                 </Link>
                                 {this.getConcretePostTypeComponent(post)}
                                 <Link to={`/${post.type}/${post.id}`} >
-                                    <h4>{new Date(post.dateCreated).toLocaleDateString()} at {new Date(post.dateCreated).toLocaleTimeString()}</h4>
-                                    <p>{post.type} post</p>
+                                    <div style={dateStyle}>{new Date(post.dateCreated).toLocaleDateString()} at {new Date(post.dateCreated).toLocaleTimeString()}</div>
+                    
                                 </Link>
                             </div>
                         </div>
@@ -311,8 +321,8 @@ class Feed extends Component {
 
         if (post.type === "image") {
             return (
-                <div id="bigPicDiv">
-                    <img src={post.imageUrl} style={imgStyle} onClick={this.enlargeImage} />;
+                <div id="bigPicDiv" style={{textAlign: "center", margin: "10px 0"}}>
+                    <img src={post.imageUrl} style={imgStyle} onClick={this.enlargeImage} />
                 </div>
             );
         }
